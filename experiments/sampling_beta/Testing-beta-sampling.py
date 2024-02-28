@@ -1,32 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Wed Feb  1 11:25:00 2023
 
-@author: vipul
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Jan 24 20:16:49 2023
-
-@author: VIPUL
-"""
 import numpy as np
-import matplotlib.pyplot as plt
-import argparse
-from itertools import product
-import pickle
 import os
-import yaml
 import time
-import shutil
-import torch
-#import torch.distributions
 import wesutils
 from quad_gym_env import QuadDynamics
 from ppo import BetaPolicy
 import ppo
-#from torch import distributions
 
 from datetime import datetime
 
@@ -37,9 +17,6 @@ today_date = datetime.today()
 today_date_str = today_date.strftime("%Y-%m-%d") 
 
 ### Hyperparameters...
-
-# ...for the agent
-# ...for the agent
 n_episodes = 10000 #1000
 rollout_length = 180
 buffer_size = rollout_length
@@ -48,19 +25,18 @@ value_lr = 0.0006
 layer_size = 256
 enable_cuda = True
 n_epochs = 10
-batch_size = 256 #modified from 256
+batch_size = 256
 entropy_coef = 0.0
 weight_decay = 0.0
-T=1 #storing reward per 100 episodes
-# ...for the environment
+T=1 
 dt = 0.1
 max_steps = 1000
 umin = -10.0* np.array([1, 1])
 umax = 10.0 * np.array([1, 1])
 episode = 0
 cbf = True
-device_run = '15oct-reward-from-laptop'
-run = 6
+device_run = 'sampling'
+run = 1
 
 
 def train():
@@ -120,7 +96,7 @@ def train():
             os.chdir('..')
         safety_rates.append(safety_rate)
         
-        print(f'Episode {i} return: {reward:.2f}') # does this work?
+        print(f'Episode {i} return: {reward:.2f}')
     
     return {'rewards': rewards,
             'safety_rates': safety_rates}
