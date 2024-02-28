@@ -1,0 +1,28 @@
+# config file for experiment comparing Beta and Gaussian policies
+
+env:
+  dt:                   0.1
+  umin:                 [-15.0, -15.0]
+  umax:                 [15.0, 15.0]
+
+
+experiment:
+  n_episodes:           10000
+  rollout_length:       320
+  buffer_size:          320
+  n_epochs:             10
+  entropy_coefficient:  0.00000001
+  weight_decay:         0.0
+  T_reward:             1
+  cbf:                  True
+  enable_cuda:          True
+  max_steps:            1000
+
+
+gaussian:
+  pi_lr:                0.0004
+  v_lr:                 0.0004
+  v_units1:             256
+  v_units2:             256
+  pi_units1:            256
+  pi_units2:            256
