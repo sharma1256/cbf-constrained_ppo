@@ -1,0 +1,31 @@
+# config file for experiment comparing Beta and Gaussian policies
+
+env:
+  tau:                  0.05
+  theta_safety_bounds:  [-1.0, 1.0]
+
+
+experiment:
+  n_episodes:           300
+  rollout_length:       2048
+  n_replications:       5
+
+
+beta:
+  torque_bounds:        [-.inf, .inf]
+  pi_lr:                0.01
+  v_lr:                 0.01
+  v_units1:             64
+  v_units2:             64
+  pi_units1:            64
+  pi_units2:            64
+
+
+gaussian:
+  torque_bounds:        [-15.0, 15.0]
+  pi_lr:                0.0003
+  v_lr:                 0.0003
+  v_units1:             64
+  v_units2:             64
+  pi_units1:            64
+  pi_units2:            64
