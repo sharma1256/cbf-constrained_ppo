@@ -1,26 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jun  9 12:16:05 2023
-
-@author: User
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun  7 22:46:55 2023
-
-@author: User
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Feb  1 11:25:00 2023
-
-@author: vipul
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Tue Jan 24 20:16:49 2023
 
 @author: VIPUL
@@ -50,7 +29,7 @@ import pdb
 ### Hyperparameters...
 
 # ...for the agent
-n_episodes = 1000 #1000
+n_episodes = 1000
 #rollout_length = 2048
 rollout_length = 2048
 buffer_size = rollout_length
@@ -63,11 +42,6 @@ batch_size = 64 #modified from 256
 entropy_coef = 0.000001
 weight_decay = 0.0
 T=5 #storing reward per 100 episodes
-# ...for the environment
-#dt = 0.03
-#max_steps = 700
-#umin = -20 * np.array([1, 1])
-#umax = 20 * np.array([1, 1])
 tau=0.05
 theta_safety_bounds=[-1.0, 1.0]
 beta_torque_bounds=[-15.0, 15.0]
@@ -81,20 +55,12 @@ def train():
         theta_safety_bounds=theta_safety_bounds,
         torque_bounds=beta_torque_bounds
     )
-    
-    # pi = BetaPolicy(
-    #     10, env.cbf, 2,
-    #     hidden_layer1_size=layer_size,
-    #     hidden_layer2_size=layer_size,
-    # )
+
     pi = agents.ppo.BetaPolicy(
         3, env.cbf, 1,
         hidden_layer1_size=pi_units1,
         hidden_layer2_size=pi_units2
     )
-    # v = wesutils.two_layer_net(
-    #     10, 1, layer_size, layer_size
-    # )
     v = wesutils.two_layer_net(
         3, 1, v_units1, v_units2
     )
@@ -117,7 +83,7 @@ def train():
         rewards.append(reward)
         safety_rates.append(safety_rate)
         if i%T==0:
-            np.save("rewards_sequence_local_duplicate.npy", rewards)
+            np.save("rewards_sequence.npy", rewards)
         safety_rates.append(safety_rate)
         
         print(f'Episode {i} return: {reward:.2f}') # does this work?
