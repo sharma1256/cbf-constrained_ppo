@@ -2,7 +2,8 @@
 """
 Spyder Editor
 """
-
+#the environment is built on top of the quadrodor dynamics found in the repo
+#https://github.com/hocherie/cbf_quadrotor
 import numpy as np
 import gym
 import torch
