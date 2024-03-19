@@ -1,6 +1,6 @@
 # cbf-constrained_ppo
 
-This repository contains the framework used to conduct the experiments for our paper "Sampling-Based Safe Reinforcement Learning for Nonlinear Dynamical Systems", appearing in _Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)_, 2024.
+This repository contains the framework used to conduct the experiments for our paper "Sampling-Based Safe Reinforcement Learning for Nonlinear Dynamical Systems", appearing in _Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)_, 2024. This paper can be found here: https://arxiv.org/abs/2403.04007
 
 
 
