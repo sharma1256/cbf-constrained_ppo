@@ -2,7 +2,9 @@
 
 This repository contains the framework used to conduct the experiments for our paper "Sampling-Based Safe Reinforcement Learning for Nonlinear Dynamical Systems", appearing in _Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)_, 2024. This paper can be found here: https://arxiv.org/abs/2403.04007
 
+In particular, this repo contains an implementation of Control Barrier Function (CBF) constrained policies in `ppo.py` that constructs a Beta policy over the safe control set obtained from the `cbf` function defined in `quad_gym_env.py`, and this policy is then updated using proximal policy optimization defined in `ppo.py`.
 
+Moreover, this repo contains implementation of safe RL policy (in `ppo_proj.pu`) using CBF (in `quad_gym_env_proj.py`) filters. This essentially leads to a projection based safe RL policy.
 
 ### Usage
 
