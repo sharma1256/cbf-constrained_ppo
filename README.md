@@ -10,5 +10,5 @@ In particular, this repo contains an implementation of control barrier function-
 2) For Quadcopter experiments:
     Go to `experiments` directory and select the experiment (e.g., `Testing-projection.py` or `Testing-beta-sampling.py`) that you wish to run
 3) For Pendulum Experiments:
-    Go to Pendulum directory and run the `Testing-pendulum.py`
+    Go to Pendulum directory and run `Testing-pendulum.py`
 5) You'll see plots and rewards arrays being stored in the corresponding experiment folder
