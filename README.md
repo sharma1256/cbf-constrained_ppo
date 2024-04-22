@@ -1,14 +1,14 @@
 # cbf-constrained_ppo
 
-This repository contains the framework used to conduct the experiments for our paper "Sampling-Based Safe Reinforcement Learning for Nonlinear Dynamical Systems", appearing in _Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)_, 2024. This paper can be found here: https://arxiv.org/abs/2403.04007
+This repository contains the framework used to conduct the experiments for our paper "Sampling-Based Safe Reinforcement Learning for Nonlinear Dynamical Systems", appearing in _Proceedings of the 27th International Conference on Artificial Intelligence and Statistics (AISTATS)_, 2024. This paper can be found [here](https://arxiv.org/abs/2403.04007).
 
-In particular, this repo contains an implementation of Control Barrier Function (CBF) constrained policies in `ppo.py` that constructs a Beta policy over the safe control set obtained from the `cbf` function defined in `quad_gym_env.py`, and this policy is then updated using proximal policy optimization defined in `ppo.py`.
+In particular, this repo contains an implementation of control barrier function-(CBF-)constrained policies in `ppo.py` that constructs a Beta policy over the safe control set obtained from the `cbf` function defined in `quad_gym_env.py`, and this policy is then updated using proximal policy optimization algorithm defined in `ppo.py`, which was adapted from [Stable Baselines3](https://stable-baselines3.readthedocs.io/en/master/).
 
-Moreover, this repo contains implementation of safe RL policy (in `ppo_proj.py`) using CBF (in `quad_gym_env_proj.py`) filters. This essentially leads to a projection based safe RL policy.
+In addition, this repo contains an implementation of projection-based safe RL policies in `ppo_proj.py` using the CBFs defined in `quad_gym_env_proj.py` to obtain safety constraints. This essentially leads to a projection based safe RL policy like that proposed in [Cheng et al., 2019](https://cdn.aaai.org/ojs/4213/4213-13-7267-1-10-20190705.pdf).
 
 ### Usage
 
-1) Install the packages in `setup.py`
+1) To install, first set up your preferred virtual environment, then do `pip install -e .`
 2) For Quadcopter experiments:
     Go to `experiments` directory and select the experiment (e.g., `Testing-projection.py` or `Testing-beta-sampling.py`) that you wish to run
 3) For Pendulum Experiments:
