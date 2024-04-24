@@ -5,7 +5,7 @@ This repository provides the framework used to conduct the experiments for our p
 Specifically, this repo contains the following:
 1) Sampling based safety-constrained PPO
 2) Constrained beta policy
-3) Projection or Safet filter Benchmark
+3) Projection or Safety filter Benchmark
 
 A Beta policy, given in `ppo.py`, is constrained over the safe control set obtained from the `cbf` function defined in `quad_gym_env.py` that represents Control Barrier Function (CBF) based safety constraints,and,
 this policy is then updated using proximal policy optimization defined in `ppo.py`, which was adapted from [Stable Baselines3](https://stable-baselines3.readthedocs.io/en/master/). 
