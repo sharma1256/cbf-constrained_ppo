@@ -24,7 +24,7 @@ Some of the dynamical components involved in our safe quadcopter gym environment
 5) You'll see plots and rewards arrays being stored in the corresponding experiment folder
 
 ### Reference
-# [Sampling-based safe reinforcement learning for nonlinear dynamical systems](https://proceedings.mlr.press/v238/suttle24a.html)
+## [Sampling-based safe reinforcement learning for nonlinear dynamical systems](https://proceedings.mlr.press/v238/suttle24a.html)
 
 `@inproceedings{suttle2024sampling,
   title={Sampling-based safe reinforcement learning for nonlinear dynamical systems},
